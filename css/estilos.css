@@ -232,3 +232,45 @@ body.oscuro .sidebar a {
 .seccion.mostrar {
   animation: fadeIn 0.5s ease-in-out;
 }
+
+/* Botón hamburguesa */
+.hamburguesa {
+  display: none;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background-color: #960E53;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  z-index: 1100;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Mostrar botón solo en móvil */
+@media (max-width: 768px) {
+  .hamburguesa {
+    display: block;
+  }
+
+  .sidebar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 220px;
+    background-color: #960E53;
+    padding-top: 40px;
+    z-index: 1000;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .sidebar.abierta {
+    display: block;
+    transform: translateX(0%);
+  }
+}

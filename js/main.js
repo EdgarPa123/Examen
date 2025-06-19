@@ -43,6 +43,22 @@ document.addEventListener('DOMContentLoaded', () => {
         objetivo.classList.add('mostrar');
         objetivo.scrollIntoView({ behavior: 'smooth' });
       }
+
+      // Cierra el menú lateral automáticamente al hacer clic (en móviles)
+      const sidebar = document.querySelector('.sidebar');
+      if (window.innerWidth <= 768 && sidebar) {
+        sidebar.classList.remove('abierta');
+      }
     });
   });
+
+  // BOTÓN HAMBURGUESA PARA MOSTRAR MENÚ EN MÓVIL
+  const toggleBtn = document.getElementById('menuToggle');
+  const sidebar = document.querySelector('.sidebar');
+
+  if (toggleBtn && sidebar) {
+    toggleBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('abierta');
+    });
+  }
 });

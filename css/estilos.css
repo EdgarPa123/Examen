@@ -1,0 +1,234 @@
+/* Fuente desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.foto-perfil {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid #960E53;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.contenedor-perfil h1 {
+  font-size: 2rem;
+  color: #960E53;
+  margin-bottom: 5px;
+}
+
+.titulo {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* Secciones */
+.seccion {
+  background: white;
+  border-left: 5px solid #960E53;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.seccion h2 {
+  color: #960E53;
+  margin-bottom: 10px;
+}
+
+.lista-habilidades li {
+  background-color: #f1f1f1;
+  color: #333;
+  padding: 8px 12px;
+  border-radius: 20px;
+  list-style: none;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Para modo oscuro */
+body.oscuro .lista-habilidades li {
+  background-color: #333;
+  color: #f1f1f1;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+
+/* Botón modo oscuro */
+.modo-oscuro-toggle {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+#btnModoOscuro {
+  background-color: #960E53;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+#btnModoOscuro:hover {
+  background-color: #7a0c46;
+}
+
+/* Modo oscuro */
+body.oscuro {
+  background-color: #121212;
+  color: #eee;
+}
+
+body.oscuro .seccion {
+  background-color: #1e1e1e;
+  border-left-color: #dc7f37;
+}
+
+body.oscuro a {
+  color: #dc7f37;
+}
+
+body.oscuro #btnModoOscuro {
+  background-color: #dc7f37;
+}
+
+body.oscuro #btnModoOscuro:hover {
+  background-color: #b86425;
+}
+
+/* Transiciones suaves */
+body, .seccion, .foto-perfil, .titulo {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Menú lateral */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 220px;
+  background-color: #960E53;
+  padding-top: 40px;
+  z-index: 1000;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  display: block;
+  padding: 10px 20px;
+  transition: background 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+  background-color: #7a0c46;
+  border-radius: 8px;
+}
+
+/* Ajuste del contenido para dejar espacio al menú */
+body {
+  padding-left: 240px;
+  scroll-behavior: smooth;
+}
+
+/* Modo oscuro para el menú */
+body.oscuro .sidebar {
+  background-color: #222;
+}
+
+body.oscuro .sidebar a {
+  color: #f1f1f1;
+}
+
+/* Responsivo: ocultar menú lateral en pantallas pequeñas */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+  body {
+    padding-left: 0;
+  }
+}
+/* Efecto hover interactivo en el menú */
+.sidebar ul li a {
+  position: relative;
+  overflow: hidden;
+}
+
+.sidebar ul li a::before {
+  content: '';
+  position: absolute;
+  left: -100%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255,255,255,0.1);
+  transition: left 0.4s ease;
+}
+
+.sidebar ul li a:hover::before {
+  left: 0;
+}
+
+/* Suavizar aparición de secciones (si usas fade) */
+.seccion {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* Animación de aparición suave */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.seccion.mostrar {
+  animation: fadeIn 0.5s ease-in-out;
+}

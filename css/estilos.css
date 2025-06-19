@@ -233,7 +233,7 @@ body.oscuro .sidebar a {
   animation: fadeIn 0.5s ease-in-out;
 }
 
-/* Botón hamburguesa */
+/* BOTÓN HAMBURGUESA – SOLO EN MÓVIL */
 .hamburguesa {
   display: none;
   position: fixed;
@@ -249,14 +249,14 @@ body.oscuro .sidebar a {
   cursor: pointer;
 }
 
-/* Mostrar botón solo en móvil */
+/* MENÚ RESPONSIVO EN MÓVIL */
 @media (max-width: 768px) {
   .hamburguesa {
     display: block;
   }
 
   .sidebar {
-    display: none;
+    display: none; /* Oculto por defecto */
     position: fixed;
     top: 0;
     left: 0;
@@ -270,7 +270,10 @@ body.oscuro .sidebar a {
   }
 
   .sidebar.abierta {
-    display: block;
-    transform: translateX(0%);
+    display: block; /* Solo visible cuando se activa con el botón */
+  }
+
+  body {
+    padding-left: 0; /* Quita el espacio lateral en móvil */
   }
 }

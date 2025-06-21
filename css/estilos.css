@@ -277,3 +277,21 @@ body.oscuro .sidebar a {
     padding-left: 0; /* Quita el espacio lateral en móvil */
   }
 }
+#proyectos .proyecto {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-left: 4px solid #237469;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  transition: transform 0.2s ease;
+}
+
+body.oscuro #proyectos .proyecto {
+  background-color: #2a2a2a;
+  border-left-color: #7ED6DF;
+}
+
+#proyectos .proyecto:hover {
+  transform: translateY(-3px);
+}
+
